@@ -15,6 +15,6 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/getGoals/:id", ensureAuth, goalsController.getGoals);
 
-router.get("/createEmptyGoals", ensureAuth, goalsController.scheduleEmptyGoals);
+router.get("/createEmptyGoals", goalsController.scheduleEmptyGoals);
 
 module.exports = router;
