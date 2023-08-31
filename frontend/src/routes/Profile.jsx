@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 import PostList from "../components/PostList";
+import Goals from "../components/Goals";
 
 const Profile = () => {
   const { user, setMessages } = useOutletContext();
@@ -41,6 +42,7 @@ const Profile = () => {
       <div className="row mt-5">
         <div className="col-6">
           <div>
+            <Goals user={user} />
             <p>
               <strong>User Name</strong>: {user.userName}
             </p>

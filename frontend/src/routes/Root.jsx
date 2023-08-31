@@ -29,7 +29,7 @@ function Root() {
       <header className="container">
         <div className="text-center">
           <h1 className="">
-            <Link to={user ? "/profile" : "/"}>Budget Breeze</Link>
+            <Link to={user ? "/profile" : "/"}>Breeze Budget</Link>
           </h1>
           <span>Breathe Easy. Budget Smart.</span>
         </div>
