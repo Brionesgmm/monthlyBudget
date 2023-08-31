@@ -1,5 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Goal = require("../models/Goal");
+const User = require("../models/User");
+
 module.exports = {
   getGoals: async (req, res) => {
     try {
