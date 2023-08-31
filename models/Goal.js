@@ -8,14 +8,8 @@ const GoalSchema = new mongoose.Schema({
   },
   goals: [
     {
-      goal: {
-        type: String,
-        required: true,
-      },
-      goalValue: {
-        type: Number,
-        required: true,
-      },
+      goal: String,
+      goalValue: Number,
       accomplished: { type: Boolean, default: false },
       id: String,
       _id: false,
