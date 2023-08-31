@@ -12,6 +12,7 @@ const Goal = ({ user }) => {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
+      console.log(data);
       setGoals(data.goals);
     } catch (error) {
       console.error("There was a problem fetching goals:", error);

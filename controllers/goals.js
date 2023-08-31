@@ -40,13 +40,7 @@ module.exports = {
       for (let user of users) {
         const newGoal = new Goal({
           userId: user._id, // Assign ObjectId directly as your schema expects it
-          goals: [
-            {
-              //   goal: "", // Assuming you want it to be empty to start
-              //   goalValue: 0, // A default value, adjust as necessary
-              //   accomplished: false,
-            },
-          ],
+          goals: [],
         });
 
         // Save the new goal
