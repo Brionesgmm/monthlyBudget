@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const cloudinary = require("../middleware/cloudinary");
 const Goal = require("../models/Goal");
 const User = require("../models/User");
@@ -14,7 +15,7 @@ module.exports = {
       }
 
       // Fetch the newest goals document for the specified user
-      const userGoals = await UserGoal.findOne({
+      const userGoals = await Goal.findOne({
         userId: mongoose.Types.ObjectId(userId),
       }).sort({ createdAt: -1 });
 
@@ -41,9 +42,9 @@ module.exports = {
           userId: user._id, // Assign ObjectId directly as your schema expects it
           goals: [
             {
-              goal: "", // Assuming you want it to be empty to start
-              goalValue: 0, // A default value, adjust as necessary
-              accomplished: false,
+              //   goal: "", // Assuming you want it to be empty to start
+              //   goalValue: 0, // A default value, adjust as necessary
+              //   accomplished: false,
             },
           ],
         });

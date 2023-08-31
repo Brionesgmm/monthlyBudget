@@ -7,12 +7,12 @@ const Goal = ({ user }) => {
 
   const fetchGoals = async () => {
     try {
-      const response = await fetch(`/api/goals/getgoals/${user._id}`);
+      const response = await fetch(`/api/goals/getGoals/${user._id}`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      console.log(data);
+      setGoals(data.goals);
     } catch (error) {
       console.error("There was a problem fetching goals:", error);
     }
@@ -61,7 +61,9 @@ const Goal = ({ user }) => {
     setGoals((prevGoals) => prevGoals.filter((goal) => goal.id !== goalId));
   };
 
-  return (
+  const updateGoal = async () => {};
+
+  const goalsElement = (
     <div>
       <h2>Goals</h2>
       {goals.length === 0 ? (
@@ -90,6 +92,21 @@ const Goal = ({ user }) => {
       <button type="button" onClick={addNewGoal}>
         Add New Goal
       </button>
+    </div>
+  );
+
+  return (
+    <div>
+      <form
+        // action={`/api/updatefacilityinfosheet/${}?_method=PUT`}
+        encType="multipart/form-data"
+        method="POST"
+      >
+        <button className="btn submitBtn" type="submit">
+          Save Changes
+        </button>
+      </form>
+      {goalsElement}
     </div>
   );
 };
